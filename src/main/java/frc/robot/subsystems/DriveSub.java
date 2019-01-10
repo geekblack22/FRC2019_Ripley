@@ -10,8 +10,8 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import frc.robot.DriveManualCommand;
 import frc.robot.RobotMap;
+import frc.robot.commands.DriveManualCommand;
 
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
