@@ -25,7 +25,7 @@ public class DriveManualCommand extends Command {
   protected void execute() {
     double leftInput = Robot.m_oi.LeftStick.getY();
     double rightInput = Robot.m_oi.RightStick.getY();
-    Robot.driveSub.manualControl(leftInput, rightInput);
+    Robot.driveSub.driveManual(leftInput, rightInput);
   }
 
   // Make this return true when this Command no longer needs to run execute()

@@ -15,8 +15,10 @@ package frc.robot;
  */
 public class RobotMap {
   //Constant values for motor ports
-  public static final int leftMotorPort = 0;
-  public static final int rightMotorPort = 1;
+  public static final int leftMotorPort1 = 0;
+  public static final int leftMotorPort2 = 1;
+  public static final int rightMotorPort1 = 2;
+  public static final int rightMotorPort2 = 3;
 
   // If you are using multiple modules, make sure to define both the port
   // number and the module. For example you with a rangefinder:

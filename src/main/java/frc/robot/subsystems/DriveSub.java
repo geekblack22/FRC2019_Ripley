@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import frc.robot.RobotMap;
@@ -20,15 +21,21 @@ public class DriveSub extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   //create motor opjects
-  public Spark leftMotor = new Spark(RobotMap.leftMotorPort);
-  public Spark rightMotor = new Spark(RobotMap.rightMotorPort);
+  public Spark leftMotor1 = new Spark(RobotMap.leftMotorPort1);
+  public Spark leftMotor2 = new Spark(RobotMap.leftMotorPort2);
+ 
+  public Spark rightMotor1 = new Spark(RobotMap.rightMotorPort1);
+  public Spark rightMotor2 = new Spark(RobotMap.rightMotorPort2);
+  
+  public SpeedControllerGroup  leftMotors = new SpeedControllerGroup(leftMotor1 , leftMotor2);
+  public SpeedControllerGroup rightMotors = new SpeedControllerGroup(rightMotor1, rightMotor2);
 
-  public DifferentialDrive drive = new DifferentialDrive(leftMotor, rightMotor);
+  public DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
   public void DriveSub(){
 
   }
-  public void manualControl(double leftInput, double rightInput){
+  public void driveManual(double leftInput, double rightInput){
     drive.tankDrive(leftInput, rightInput);
   }
   @Override

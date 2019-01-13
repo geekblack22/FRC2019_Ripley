@@ -26,6 +26,7 @@ import frc.robot.subsystems.AlienVision;;
  */
 public class Robot extends TimedRobot {
   public static DriveSub driveSub = new DriveSub();
+  public static AlienVision alienVision= new AlienVision();
   public static OI m_oi;
 
 
