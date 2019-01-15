@@ -25,13 +25,19 @@ public class RobotMap {
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
 
-    //Constant values for Joystick ports
+  //Constant values for Joystick ports
   public  static final int joystickPortLeft = 0;
   public static final int joystickPortRight = 1;
 
   //Jostick button Values
-  public static final int joyStickArmTrigger = 0;
+  public static final int joyStickArmTrigger = 1;
   public static final int joyStickArmSolenoidTrigger = 0;
+
+  //PCM VALUES
+  public static final int SOLENOID_VALUE = 0;
+
+
+
 
 
 
