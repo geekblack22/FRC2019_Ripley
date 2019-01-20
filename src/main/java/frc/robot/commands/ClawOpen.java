@@ -7,12 +7,16 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
+import frc.robot.subsystems.*;
+import frc.robot.*;
 
-public class DriveManualCommand extends Command {
-  public DriveManualCommand() {
-   requires(Robot.driveSub);
+import edu.wpi.first.wpilibj.command.Command;
+
+public class ClawOpen extends Command {
+  public ClawOpen() {
+    requires(Robot.clawPiston);
+    // Use requires() here to declare subsystem dependencies
+    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time
@@ -23,9 +27,7 @@ public class DriveManualCommand extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    double leftInput = Robot.m_oi.LeftStick.getY();
-    double rightInput = Robot.m_oi.RightStick.getY();
-    Robot.driveSub.driveManual(leftInput, rightInput);
+      Robot.clawPiston.pushOff();
   }
 
   // Make this return true when this Command no longer needs to run execute()
