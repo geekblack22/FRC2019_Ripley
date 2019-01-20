@@ -32,9 +32,7 @@ public class DriveSub extends Subsystem {
 
   public DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
-  public void DriveSub(){
-
-  }
+  
   public void driveManual(double leftInput, double rightInput){
     leftInput *=-1;
     rightInput *=-1;
