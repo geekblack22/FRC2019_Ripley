@@ -9,6 +9,8 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import org.opencv.core.Mat;
+import org.opencv.core.Point;
+import org.opencv.core.Scalar;
 import org.opencv.imgproc.Imgproc;
 import edu.wpi.cscore.CvSink;
 import edu.wpi.cscore.CvSource;
@@ -30,10 +32,11 @@ public class AlienVision extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
-
+    int w = 640;
+    int h = 480;
     visionThread = new Thread(()-> {
       UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-      camera.setResolution(640, 480);
+      camera.setResolution(w, h);
 
       CvSink cvSink = CameraServer.getInstance().getVideo();
        CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
@@ -43,7 +46,8 @@ public class AlienVision extends Subsystem {
                 
                 while(!Thread.interrupted()) {
                     cvSink.grabFrame(source);
-                    Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
+
+                    Imgproc.rectangle(output, new Point(w/2, h/2),new Point(w/2, h/2),new Scalar(255, 255, 0), 3);
                     outputStream.putFrame(output);
                 }
   
