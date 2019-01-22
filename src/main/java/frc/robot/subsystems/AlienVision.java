@@ -8,6 +8,8 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+
+
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.core.Scalar;
@@ -32,26 +34,31 @@ public class AlienVision extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
-    int w = 640;
-    int h = 480;
+    int w = 320;
+    int h = 240;
     visionThread = new Thread(()-> {
       UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
       camera.setResolution(w, h);
 
       CvSink cvSink = CameraServer.getInstance().getVideo();
-       CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+       CvSource outputStream = CameraServer.getInstance().putVideo("Target", h, w);
                 
-                Mat source = new Mat();
-                Mat output = new Mat();
-                
-                while(!Thread.interrupted()) {
-                    cvSink.grabFrame(source);
+               
+                Mat rect = new Mat();
 
-                    Imgproc.rectangle(output, new Point(w/2, h/2),new Point(w/2, h/2),new Scalar(255, 255, 0), 3);
-                    outputStream.putFrame(output);
+                while(!Thread.interrupted()) {
+                  
+                    if(cvSink.grabFrame(rect) == 0){
+                      outputStream.notifyError(cvSink.getError());
+                    }
+
+                    Imgproc.rectangle(rect, new Point(w/2, h/2),new Point(w/3, h/3),new Scalar(255, 255, 0), 3);
+                   
+                    outputStream.putFrame(rect);
                 }
   
     });
+    visionThread.setDaemon(true);
     visionThread.start();
   }
 }
