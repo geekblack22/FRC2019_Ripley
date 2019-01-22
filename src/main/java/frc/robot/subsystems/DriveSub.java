@@ -32,12 +32,32 @@ public class DriveSub extends Subsystem {
 
   public DifferentialDrive drive = new DifferentialDrive(leftMotors, rightMotors);
 
-  public void DriveSub(){
-
-  }
+  
   public void driveManual(double leftInput, double rightInput){
+
     leftInput *= -1;
     rightInput *= -1;
+
+    leftInput *=-1;
+    rightInput *=-1;
+    if(leftInput < 0){
+      leftInput = Math.pow(leftInput, 2);
+      leftInput *=-1;
+    }
+    else {
+      leftInput = Math.pow(leftInput, 2);
+    }
+    if(rightInput < 0){
+      rightInput = Math.pow(rightInput, 2);
+      rightInput *=-1;
+    }
+    else{
+     
+      rightInput = Math.pow(rightInput, 2);
+    }
+    
+
+
     drive.tankDrive(leftInput, rightInput);
   }
   @Override

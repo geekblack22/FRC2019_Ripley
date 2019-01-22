@@ -27,7 +27,7 @@ import frc.robot.subsystems.Claw;;
  */
 public class Robot extends IterativeRobot {
   public static DriveSub driveSub = new DriveSub();
-  public static AlienVision alienVision= new AlienVision();
+  public static AlienVision alienVision = new AlienVision();
   public static Claw clawPiston = new Claw();
   public static OI m_oi;
 
@@ -42,6 +42,7 @@ public class Robot extends IterativeRobot {
   @Override
   public void robotInit() {
     m_oi = new OI();
+    alienVision = new AlienVision();
     m_chooser.setDefaultOption("Default Auto", new DriveManualCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", m_chooser);
