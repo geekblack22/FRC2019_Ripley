@@ -36,6 +36,8 @@ public class DriveSub extends Subsystem {
 
   }
   public void driveManual(double leftInput, double rightInput){
+    leftInput *= -1;
+    rightInput *= -1;
     drive.tankDrive(leftInput, rightInput);
   }
   @Override
