@@ -50,9 +50,10 @@ public class AlienVision extends Subsystem {
                   
                     if(cvSink.grabFrame(rect) == 0){
                       outputStream.notifyError(cvSink.getError());
+                      continue;
                     }
 
-                    Imgproc.rectangle(rect, new Point(w/2, h/2),new Point(w/3, h/3),new Scalar(255, 255, 0), 3);
+                    Imgproc.rectangle(rect, new Point(100, 100),new Point(150, 150),new Scalar(255, 255, 0), 3);
                    
                     outputStream.putFrame(rect);
                 }

@@ -27,10 +27,11 @@ public class OI {
    public Joystick RightStick = new Joystick(RobotMap.joystickPortRight);
 
    public JoystickButton left1 = new JoystickButton(LeftStick, RobotMap.joyStickArmSolenoidTrigger);
-
+   public JoystickButton foward =  new JoystickButton(LeftStick, RobotMap.joStickArmFoward);
+   public JoystickButton back = new JoystickButton(LeftStick, RobotMap.joStickArmBack);
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
-  // commands the same as any other Button.
+  // commands the same as any other Button.RobotMap.
 
   //// TRIGGERING COMMANDS WITH BUTTONS
   // Once you have a button, it's trivial to bind it to a button in one of
@@ -53,6 +54,8 @@ public class OI {
   //this is only for buttons!
   public OI() {
   left1.whenPressed(new ClawOpen());
-  }
+  foward.whileHeld(new ClawExtend());
+  back.whileHeld(new ClawRetract());
+}
 
 }

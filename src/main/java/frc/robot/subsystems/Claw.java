@@ -22,7 +22,7 @@ public class Claw extends Subsystem {
 
   Boolean onClaw = true;
   Boolean offClaw = false;
-
+    
   Solenoid s1 = new Solenoid(RobotMap.SOLENOID_VALUE);
 
   public void pushOff() {

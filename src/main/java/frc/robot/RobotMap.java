@@ -29,10 +29,11 @@ public class RobotMap {
   public  static final int joystickPortLeft = 0;
   public static final int joystickPortRight = 1;
 
-  //Jostick button Values
+  //Jostick button Values for Arm
   public static final int joyStickArmTrigger = 2;
   public static final int joyStickArmSolenoidTrigger = 1;
-
+  public static final int joStickArmFoward = 6;
+  public static final int joStickArmBack = 5;
   //PCM VALUES
   public static final int SOLENOID_VALUE = 0;
 
