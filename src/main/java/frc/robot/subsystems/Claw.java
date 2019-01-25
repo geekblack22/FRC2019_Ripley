@@ -25,6 +25,7 @@ public class Claw extends Subsystem {
     
   Solenoid s1 = new Solenoid(RobotMap.SOLENOID_VALUE);
 
+
   public void pushOff() {
     s1.set(onClaw);
   }

@@ -16,7 +16,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.DriveManualCommand;
 import frc.robot.subsystems.DriveSub;
 import frc.robot.subsystems.AlienVision;
-import frc.robot.subsystems.Claw;;
+import frc.robot.subsystems.Claw;
+
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -29,6 +30,7 @@ public class Robot extends IterativeRobot {
   public static DriveSub driveSub = new DriveSub();
   public static AlienVision alienVision = new AlienVision();
   public static Claw clawPiston = new Claw();
+ 
   public static OI m_oi;
 
 

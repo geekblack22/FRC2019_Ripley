@@ -36,6 +36,9 @@ public class RobotMap {
   public static final int joStickArmBack = 5;
   //PCM VALUES
   public static final int SOLENOID_VALUE = 0;
+  public static final int SOLENOID_VALUE_1 = 1;
+
+
 
 
 
