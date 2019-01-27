@@ -39,20 +39,22 @@ public class DriveSub extends Subsystem {
     rightInput *= -1;
 
     
-    if(leftInput < 0 && Math.abs(leftInput) > .45){
-      leftInput = Math.pow(leftInput, 2);
+    if(leftInput < 0){
+      leftInput = Math.abs(leftInput);
+      leftInput = Math.pow(leftInput, leftInput + 1);
       leftInput *=-1;
     }
-    else if(Math.abs(leftInput) > .45) {
-      leftInput = Math.pow(leftInput, 2);
+    else {
+      leftInput = Math.pow(leftInput, leftInput + 1);
     }
-    if(rightInput < 0 && Math.abs(rightInput) > .45){
-      rightInput = Math.pow(rightInput, 2);
+    if(rightInput < 0){
+      rightInput = Math.abs(rightInput);
+      rightInput = Math.pow(rightInput, rightInput + 1);
       rightInput *=-1;
     }
-    else if( Math.abs(rightInput) > .45){
+    else{
      
-      rightInput = Math.pow(rightInput, 2);
+      rightInput = Math.pow(rightInput, rightInput + 1);
     }
     
 

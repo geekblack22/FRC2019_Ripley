@@ -41,22 +41,22 @@ public class AlienVision extends Subsystem {
       camera.setResolution(w, h);
 
       CvSink cvSink = CameraServer.getInstance().getVideo();
-       CvSource outputStream = CameraServer.getInstance().putVideo("Target", h, w);
+      CvSource outputStream = CameraServer.getInstance().putVideo("Target", h, w);
                 
                
-                Mat rect = new Mat();
+      Mat rect = new Mat();
 
-                while(!Thread.interrupted()) {
-                  
-                    if(cvSink.grabFrame(rect) == 0){
-                      outputStream.notifyError(cvSink.getError());
-                      continue;
-                    }
+      while(!Thread.interrupted()) {
+        
+          if(cvSink.grabFrame(rect) == 0){
+            outputStream.notifyError(cvSink.getError());
+            continue;
+          }
 
-                    Imgproc.rectangle(rect, new Point(100, 100),new Point(150, 150),new Scalar(255, 255, 0), 3);
-                   
-                    outputStream.putFrame(rect);
-                }
+          Imgproc.rectangle(rect, new Point(100, 100),new Point(150, 150),new Scalar(255, 255, 0), 3);
+          
+          outputStream.putFrame(rect);
+      }
   
     });
     visionThread.setDaemon(true);
