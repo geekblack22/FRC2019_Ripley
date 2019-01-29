@@ -34,8 +34,8 @@ public class AlienVision extends Subsystem {
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
-    int w = 320;
-    int h = 240;
+    int w = 640;
+    int h = 480;
     visionThread = new Thread(()-> {
       UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
       camera.setResolution(w, h);
@@ -53,7 +53,7 @@ public class AlienVision extends Subsystem {
             continue;
           }
 
-          Imgproc.rectangle(rect, new Point(100, 100),new Point(150, 150),new Scalar(255, 255, 0), 3);
+          Imgproc.rectangle(rect, new Point(w / 2- 50 , h / 2 - 50),new Point(w / 2 + 50, h / 2 + 50),new Scalar(255, 255, 0), 3);
           
           outputStream.putFrame(rect);
       }
