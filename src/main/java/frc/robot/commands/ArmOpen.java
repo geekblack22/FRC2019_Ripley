@@ -7,13 +7,16 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
+import frc.robot.subsystems.*;
+import frc.robot.*;
 
-public class ClawExtend extends Command {
-  public ClawExtend() {
+import edu.wpi.first.wpilibj.command.Command;
+
+public class ArmOpen extends Command {
+  public ArmOpen() {
+    requires(Robot.arm);
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.clawPiston);
+    // eg. requires(chassis);
   }
 
   // Called just before this Command runs the first time
@@ -24,6 +27,7 @@ public class ClawExtend extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
+      Robot.arm.pushOff();
   }
 
   // Make this return true when this Command no longer needs to run execute()

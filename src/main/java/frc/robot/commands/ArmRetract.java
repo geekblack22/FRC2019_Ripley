@@ -7,16 +7,13 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.*;
-import frc.robot.*;
-
 import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
-public class ClawOpen extends Command {
-  public ClawOpen() {
-    requires(Robot.clawPiston);
+public class ArmRetract extends Command {
+  public ArmRetract() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
+    requires(Robot.arm);
   }
 
   // Called just before this Command runs the first time
@@ -27,7 +24,7 @@ public class ClawOpen extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-      Robot.clawPiston.pushOff();
+    Robot.arm.ArmRetract();
   }
 
   // Make this return true when this Command no longer needs to run execute()

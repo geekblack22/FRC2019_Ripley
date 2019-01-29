@@ -9,31 +9,39 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-
+import frc.robot.commands.ArmRetract;
 import edu.wpi.first.wpilibj.Solenoid;
+import edu.wpi.first.wpilibj.Spark;
 
 
 /**
  * Add your docs here.
  */
-public class Claw extends Subsystem {
+public class Arm extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  Boolean onClaw = true;
-  Boolean offClaw = false;
+  Boolean onArm = true;
+  Boolean offArm = false;
     
   Solenoid s1 = new Solenoid(RobotMap.SOLENOID_VALUE);
 
+  public Spark armMotor = new Spark(RobotMap.armMotorPort);
 
   public void pushOff() {
-    s1.set(onClaw);
+    s1.set(onArm);
   }
 
   public void pullBackPiston() {
-    s1.set(offClaw);
+    s1.set(offArm);
+  }
+  public void armExtend(){
+    armMotor.set(.5);
   }
 
+  public void ArmRetract(){
+    armMotor.set(-.5);
+  }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
