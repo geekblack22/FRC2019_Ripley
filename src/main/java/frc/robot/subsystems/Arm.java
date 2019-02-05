@@ -9,7 +9,6 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.ArmRetract;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
 
@@ -41,6 +40,9 @@ public class Arm extends Subsystem {
 
   public void ArmRetract(){
     armMotor.set(-.5);
+  }
+  public void ArmStop(){
+    armMotor.set(0);
   }
   @Override
   public void initDefaultCommand() {
