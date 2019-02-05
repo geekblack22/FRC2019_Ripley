@@ -50,7 +50,7 @@ public class Arm extends Subsystem {
     c1.setClosedLoopControl(true);
   }
   public void CompressorOff(){
-    c1.setClosedLoopControl(true);
+    c1.setClosedLoopControl(false);
 
   }
   @Override
