@@ -33,11 +33,13 @@ public class RobotMap {
   //Jostick button Values for Arm
   public static final int joyStickArmTrigger = 2;
   public static final int joyStickArmSolenoidTrigger = 1;
+  public static final int joyStickArmCompressor = 1;
   public static final int joStickArmFoward = 6;
   public static final int joStickArmBack = 5;
   //PCM VALUES
   public static final int SOLENOID_VALUE = 0;
   public static final int SOLENOID_VALUE_1 = 1;
+  
 
 
 

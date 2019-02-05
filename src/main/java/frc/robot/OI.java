@@ -29,6 +29,7 @@ public class OI {
    public JoystickButton left1 = new JoystickButton(LeftStick, RobotMap.joyStickArmSolenoidTrigger);
    public JoystickButton foward =  new JoystickButton(LeftStick, RobotMap.joStickArmFoward);
    public JoystickButton back = new JoystickButton(LeftStick, RobotMap.joStickArmBack);
+   public JoystickButton comp = new JoystickButton(RightStick, RobotMap.joyStickArmCompressor);
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.RobotMap.
@@ -56,6 +57,7 @@ public class OI {
   left1.whenPressed(new ArmOpen());
   foward.whileHeld(new ArmExtend());
   back.whileHeld(new ArmRetract());
+  comp.whileHeld(new CompressorState());
 }
 
 }
