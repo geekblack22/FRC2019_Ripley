@@ -44,6 +44,7 @@ public class ArmExtend extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
+    Robot.arm.ArmStop();
   
   }
 }
