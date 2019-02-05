@@ -54,7 +54,7 @@ public class AlienVision extends Subsystem {
           }
 
           Imgproc.rectangle(rect, new Point(w / 2- 50 , h / 2 - 50),new Point(w / 2 + 50, h / 2 + 50),new Scalar(255, 255, 0), 3);
-          Imgproc.circle(rect, new Point(w/2 , h/2), 10, new Scalar(255,0,0), 5);
+          //Imgproc.circle(rect, new Point(w/2 , h/2), 10, new Scalar(255,0,0), 5);
          
          
           

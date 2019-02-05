@@ -9,6 +9,8 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.ArmOpen;
+import frc.robot.commands.CompressorState;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
@@ -29,6 +31,9 @@ public class Arm extends Subsystem {
   public Spark armMotor = new Spark(RobotMap.armMotorPort);
 
   Compressor c1 = new Compressor(0);
+
+ 
+
   public void pushOff() {
     s1.set(onArm);
   }
@@ -50,12 +55,18 @@ public class Arm extends Subsystem {
     c1.setClosedLoopControl(true);
   }
   public void CompressorOff(){
+    if(c1.getPressureSwitchValue() == true){
     c1.setClosedLoopControl(false);
+    }
 
   }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+    setDefaultCommand(new ArmOpen());
+    
+ 
+  
+    
   }
 }
