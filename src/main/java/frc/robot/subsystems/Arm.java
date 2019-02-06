@@ -12,6 +12,7 @@ import frc.robot.RobotMap;
 import frc.robot.commands.ArmOpen;
 import frc.robot.commands.CompressorState;
 import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Spark;
 
@@ -22,11 +23,10 @@ import edu.wpi.first.wpilibj.Spark;
 public class Arm extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-
-  Boolean onArm = true;
-  Boolean offArm = false;
+  
     
-  Solenoid s1 = new Solenoid(RobotMap.SOLENOID_VALUE);
+  DoubleSolenoid s1 = new DoubleSolenoid(RobotMap.SOLENOID_VALUE, RobotMap.SOLENOID_VALUE1);
+  
 
   public Spark armMotor = new Spark(RobotMap.armMotorPort);
 
@@ -35,11 +35,11 @@ public class Arm extends Subsystem {
  
 
   public void pushOff() {
-    s1.set(onArm);
+    s1.set(DoubleSolenoid.Value.kForward);
   }
 
   public void pullBackPiston() {
-    s1.set(offArm);
+    s1.set(DoubleSolenoid.Value.kReverse);
   }
   public void armExtend(){
     armMotor.set(.5);

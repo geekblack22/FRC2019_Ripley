@@ -38,6 +38,7 @@ public class RobotMap {
   public static final int joyStickArmBack = 5;
   //PCM VALUES
   public static final int SOLENOID_VALUE = 0;
+  public static final int SOLENOID_VALUE1 = 1;
   
 
   
