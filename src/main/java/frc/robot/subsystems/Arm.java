@@ -33,7 +33,7 @@ public class Arm extends Subsystem {
   Compressor c1 = new Compressor(0);
 
  
-
+ 
   public void pushOff() {
     s1.set(DoubleSolenoid.Value.kForward);
   }
@@ -41,12 +41,15 @@ public class Arm extends Subsystem {
   public void pullBackPiston() {
     s1.set(DoubleSolenoid.Value.kReverse);
   }
+  public void solenoidOff(){
+    s1.set(DoubleSolenoid.Value.kOff);
+  }
   public void armExtend(){
-    armMotor.set(.5);
+    armMotor.set(.3);
   }
 
   public void ArmRetract(){
-    armMotor.set(-.5);
+    armMotor.set(-.3);
   }
   public void ArmStop(){
     armMotor.set(0);
@@ -63,7 +66,7 @@ public class Arm extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new ArmOpen());
+    //setDefaultCommand(new ArmOpen());
     
  
   
