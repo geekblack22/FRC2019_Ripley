@@ -13,7 +13,7 @@ import frc.robot.Robot;
 public class ArmExtend extends Command {
   public ArmExtend() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.arm);
+    requires(Robot.motor);
   }
 
   // Called just before this Command runs the first time
@@ -24,7 +24,8 @@ public class ArmExtend extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.arm.armExtend();
+    Robot.motor.armExtend();
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -37,14 +38,15 @@ public class ArmExtend extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.arm.ArmStop();
+    Robot.motor.ArmStop();
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.arm.ArmStop();
+    Robot.motor.ArmStop();
+    
   
   }
 }

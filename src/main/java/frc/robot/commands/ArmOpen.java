@@ -34,6 +34,7 @@ public class ArmOpen extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
+   
     return false;
   }
 
@@ -41,6 +42,7 @@ public class ArmOpen extends Command {
   @Override
   protected void end() {
     Robot.arm.pullBackPiston();
+   
    
    
 
@@ -51,6 +53,8 @@ public class ArmOpen extends Command {
   @Override
   protected void interrupted() {
     Robot.arm.pullBackPiston();
+   
+
    
   }
 }

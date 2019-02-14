@@ -13,19 +13,19 @@ import frc.robot.Robot;
 public class ArmRetract extends Command {
   public ArmRetract() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.arm);
+    requires(Robot.motor);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.arm.solenoidOff();
+   
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.arm.ArmRetract();
+    Robot.motor.ArmRetract();
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -37,7 +37,7 @@ public class ArmRetract extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.arm.ArmStop();
+    Robot.motor.ArmStop();
 
   }
 
@@ -45,7 +45,7 @@ public class ArmRetract extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.arm.ArmStop();
+    Robot.motor.ArmStop();
    
   }
 }

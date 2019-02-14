@@ -9,70 +9,41 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.ArmOpen;
-import frc.robot.commands.CompressorState;
-import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.Solenoid;
+import frc.robot.commands.ArmRetract;
 import edu.wpi.first.wpilibj.Spark;
-
 
 
 /**
  * Add your docs here.
  */
-public class Arm extends Subsystem {
+public class ArmMotor extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
+  public Spark armMotor = new Spark(RobotMap.armMotorPort);
+  public void armExtend(){
   
+    armMotor.set(.3);
     
-  DoubleSolenoid s1 = new DoubleSolenoid(RobotMap.SOLENOID_VALUE, RobotMap.SOLENOID_VALUE1);
-  
 
- 
-
-  Compressor c1 = new Compressor(0);
-
- 
- 
-  public void pushOff() {
-    
-    s1.set(DoubleSolenoid.Value.kForward);
-    
    
+    
   }
 
-  public void pullBackPiston() {
+  public void ArmRetract(){
+
+  armMotor.set(-.3);
    
-    s1.set(DoubleSolenoid.Value.kReverse);
     
   }
-  public void solenoidOff(){
-  
-    s1.set(DoubleSolenoid.Value.kOff);
+  public void ArmStop(){
+   
+    armMotor.set(0);
+   
     
-    
-  }
- 
-  public void CompressorOn(){
-    c1.setClosedLoopControl(true);
-  }
-  public void CompressorOff(){
-    
-    c1.setClosedLoopControl(false);
-    
-
   }
   @Override
   public void initDefaultCommand() {
-    
     // Set the default command for a subsystem here.
-    
-      setDefaultCommand(new ArmOpen());
-    
-    
- 
-  
-    
+    setDefaultCommand(new ArmRetract());
   }
 }
