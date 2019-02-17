@@ -29,7 +29,7 @@ public class RobotMap {
   //Constant values for Joystick ports
   public  static final int joystickPortLeft = 0;
   public static final int joystickPortRight = 1;
-
+ 
   //Jostick button Values for Arm
   public static final int joyStickArmTrigger = 2;
   public static final int joyStickArmSolenoidTrigger = 1;
@@ -40,8 +40,8 @@ public class RobotMap {
   public static final int SOLENOID_VALUE = 0;
   public static final int SOLENOID_VALUE1 = 1;
   //Motor Constants
-  public static final int leftM = 1;
-  public static final int rightM = 2;
+  public static final double leftM = 1;
+  public static final double rightM = 2.5;
   
   
 

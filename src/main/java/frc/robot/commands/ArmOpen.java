@@ -34,7 +34,10 @@ public class ArmOpen extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-   
+    if(!Robot.m_oi.left1.get()){
+      Robot.arm.pullBackPiston();
+      return true;
+    }
     return false;
   }
 
@@ -53,8 +56,6 @@ public class ArmOpen extends Command {
   @Override
   protected void interrupted() {
     Robot.arm.pullBackPiston();
-   
-
    
   }
 }

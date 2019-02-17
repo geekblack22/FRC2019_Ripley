@@ -25,7 +25,11 @@ public class DriveManualCommand extends Command {
   protected void execute() {
     double leftInput = Robot.m_oi.LeftStick.getY();
     double rightInput = Robot.m_oi.RightStick.getY();
+    double precise =  Robot.m_oi.LeftStick.getPOV();
     Robot.driveSub.driveManual(leftInput, rightInput);
+    if(Math.abs(leftInput) <= .1 && Math.abs(rightInput) <=.1){
+      Robot.driveSub.driveManualPrecise(precise);
+    }
   }
 
   // Make this return true when this Command no longer needs to run execute()

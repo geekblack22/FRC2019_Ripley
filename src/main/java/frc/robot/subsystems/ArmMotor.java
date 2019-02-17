@@ -22,7 +22,7 @@ public class ArmMotor extends Subsystem {
   public Spark armMotor = new Spark(RobotMap.armMotorPort);
   public void armExtend(){
   
-    armMotor.set(.3);
+    armMotor.set(.75);
     
 
    
@@ -31,7 +31,7 @@ public class ArmMotor extends Subsystem {
 
   public void ArmRetract(){
 
-  armMotor.set(-.3);
+  armMotor.set(-.75);
    
     
   }
@@ -44,6 +44,6 @@ public class ArmMotor extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new ArmRetract());
+   
   }
 }

@@ -58,8 +58,9 @@ public class Arm extends Subsystem {
     c1.setClosedLoopControl(true);
   }
   public void CompressorOff(){
-    
+    if(c1.getClosedLoopControl() == true){
     c1.setClosedLoopControl(false);
+  }
     
 
   }
@@ -68,7 +69,7 @@ public class Arm extends Subsystem {
     
     // Set the default command for a subsystem here.
     
-      setDefaultCommand(new ArmOpen());
+    //  setDefaultCommand(new ArmOpen());
     
     
  

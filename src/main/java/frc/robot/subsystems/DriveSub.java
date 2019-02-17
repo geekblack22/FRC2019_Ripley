@@ -58,6 +58,31 @@ public class DriveSub extends Subsystem {
 
     drive.tankDrive(leftInput, rightInput);
   }
+  public void driveManualPrecise(double precise){
+    //Foward
+      System.out.println(precise);
+     if(precise == 180){
+      leftMotors.set(-.3);
+      rightMotors.set(.25);
+  
+    }
+    //left
+      else if(precise == 0){
+      leftMotors.set(.3);
+      rightMotors.set(-.25);
+    }
+    // foward
+     if(precise == 270){
+      leftMotors.set(-.3);
+      rightMotors.set(-.25);
+    }
+   
+      else if(precise == 90){
+      leftMotors.set(.3);
+      rightMotors.set(.25);
+     
+    }
+  }
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
