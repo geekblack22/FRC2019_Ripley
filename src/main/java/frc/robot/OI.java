@@ -58,7 +58,7 @@ public class OI {
   left1.whileHeld(new ArmOpen());
   foward.whileHeld(new ArmExtend());
   back.whileHeld(new ArmRetract());
-  comp.whenPressed(new CompressorState());
+  
 }
 
 }

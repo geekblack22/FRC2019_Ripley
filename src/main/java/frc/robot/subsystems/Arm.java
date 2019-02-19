@@ -10,7 +10,6 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.ArmOpen;
-import frc.robot.commands.CompressorState;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Solenoid;
@@ -34,17 +33,21 @@ public class Arm extends Subsystem {
   Compressor c1 = new Compressor(0);
 
  
- 
+
   public void pushOff() {
     
     s1.set(DoubleSolenoid.Value.kForward);
-    
+    if(c1.getPressureSwitchValue()){
+      CompressorOn();
+    }
    
   }
 
   public void pullBackPiston() {
    
     s1.set(DoubleSolenoid.Value.kReverse);
+   
+    
     
   }
   public void solenoidOff(){
@@ -57,13 +60,10 @@ public class Arm extends Subsystem {
   public void CompressorOn(){
     c1.setClosedLoopControl(true);
   }
-  public void CompressorOff(){
-    if(c1.getClosedLoopControl() == true){
-    c1.setClosedLoopControl(false);
-  }
-    
+ 
+  
 
-  }
+  
   @Override
   public void initDefaultCommand() {
     
