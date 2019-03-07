@@ -14,32 +14,22 @@ import edu.wpi.first.wpilibj.Spark;
 
 
 /**
- * Add your docs here.
+ *This controls the motor in the arm
+ @author Yveder Joseph
  */
 public class ArmMotor extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
   public Spark armMotor = new Spark(RobotMap.armMotorPort);
   public void armExtend(){
-  
     armMotor.set(.75);
-    
-
-   
-    
   }
 
   public void ArmRetract(){
-
-  armMotor.set(-.75);
-   
-    
+  armMotor.set(-.75); 
   }
   public void ArmStop(){
-   
     armMotor.set(0);
-   
-    
   }
   @Override
   public void initDefaultCommand() {
