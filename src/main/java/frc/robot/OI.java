@@ -56,8 +56,8 @@ public class OI {
   //this is only for buttons!
   public OI() {
   left1.whileHeld(new ArmOpen());
-  foward.whileHeld(new ArmExtend());
-  back.whileHeld(new ArmRetract());
+  //foward.whileHeld(new ArmExtend());
+  //back.whileHeld(new ArmRetract());
   
 }
 

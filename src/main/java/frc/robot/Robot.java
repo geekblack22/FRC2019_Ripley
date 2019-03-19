@@ -17,7 +17,7 @@ import frc.robot.commands.DriveManualCommand;
 import frc.robot.subsystems.DriveSub;
 import frc.robot.subsystems.AlienVision;
 import frc.robot.subsystems.Arm;
-import frc.robot.subsystems.ArmMotor;
+import frc.robot.subsystems.ArmRotate;
 
 
 
@@ -32,7 +32,7 @@ public class Robot extends IterativeRobot {
   public static DriveSub driveSub = new DriveSub();
   public static AlienVision alienVision = new AlienVision();
   public static Arm arm = new Arm();
-  public static ArmMotor motor = new ArmMotor();
+  public static ArmRotate rotate = new ArmRotate();
   
   public static OI m_oi;
 

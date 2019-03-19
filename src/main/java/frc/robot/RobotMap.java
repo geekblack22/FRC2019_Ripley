@@ -39,8 +39,8 @@ public class RobotMap {
   public static final int SOLENOID_VALUE = 0;
   public static final int SOLENOID_VALUE1 = 1;
   //Motor Constants
-  public static final double leftM = 1;
-  public static final double rightM = 2.7;
+  public static final double leftM = 1.1;
+  public static final double rightM = 3.1;
   
   
 

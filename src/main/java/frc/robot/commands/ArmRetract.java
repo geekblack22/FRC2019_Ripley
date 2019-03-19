@@ -13,7 +13,7 @@ import frc.robot.Robot;
 public class ArmRetract extends Command {
   public ArmRetract() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.motor);
+    requires(Robot.rotate);
   }
 
   // Called just before this Command runs the first time

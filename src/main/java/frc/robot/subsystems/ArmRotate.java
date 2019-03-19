@@ -18,10 +18,10 @@ import edu.wpi.first.wpilibj.Spark;
  *This controls the motor in the arm
  @author Yveder Joseph
  */
-public class ArmMotor extends Subsystem {
+public class ArmRotate extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  public Spark armMotor = new Spark(RobotMap.armMotorPort);
+  //public Spark armMotor = new Spark(RobotMap.armMotorPort);
   public DoubleSolenoid armSolenoid = new DoubleSolenoid(RobotMap.SOLENOID_VALUE2, RobotMap.SOLENOID_VALUE3);
 
   public void armExtend(){
