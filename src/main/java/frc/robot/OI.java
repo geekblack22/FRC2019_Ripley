@@ -28,8 +28,8 @@ public class OI {
 
    public JoystickButton left1 = new JoystickButton(LeftStick, RobotMap.joyStickArmSolenoidTrigger);
    public JoystickButton foward =  new JoystickButton(LeftStick, RobotMap.joyStickArmFoward);
-   public JoystickButton back = new JoystickButton(RightStick, RobotMap.joyStickArmBack);
-   public JoystickButton comp = new JoystickButton(RightStick, RobotMap.joyStickArmCompressor);
+   public JoystickButton back = new JoystickButton(LeftStick, RobotMap.joyStickArmBack);
+  
     
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
