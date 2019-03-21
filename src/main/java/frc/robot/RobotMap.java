@@ -36,8 +36,12 @@ public class RobotMap {
   public static final int joyStickArmFoward = 6;
   public static final int joyStickArmBack = 5;
   //PCM VALUES
+  //Double solenoid 1
   public static final int SOLENOID_VALUE = 0;
   public static final int SOLENOID_VALUE1 = 1;
+  //Double solenoid 2
+  public static final int SOLENOID_VALUE2 = 2;
+  public static final int SOLENOID_VALUE3 = 3;
   //Motor Constants
   public static final double leftM = 1.1;
   public static final double rightM = 3.1;

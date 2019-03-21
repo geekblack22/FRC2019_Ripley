@@ -23,7 +23,7 @@ public class ArmRotate extends Subsystem {
   // here. Call these from Commands.
   //public Spark armMotor = new Spark(RobotMap.armMotorPort);
   public DoubleSolenoid armSolenoid = new DoubleSolenoid(RobotMap.SOLENOID_VALUE2, RobotMap.SOLENOID_VALUE3);
-
+  
   public void armExtend(){
     //armMotor.set(.75);
     armSolenoid.set(DoubleSolenoid.Value.kForward);

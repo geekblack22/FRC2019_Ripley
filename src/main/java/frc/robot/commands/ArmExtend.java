@@ -8,7 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
+import frc.robot.*;
 
 public class ArmExtend extends Command {
   public ArmExtend() {
@@ -24,7 +24,7 @@ public class ArmExtend extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.motor.armExtend();
+    Robot.rotate.armExtend();
     
   }
 
@@ -38,14 +38,14 @@ public class ArmExtend extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.motor.ArmStop();
+    //Robot.rotate.ArmStop();
   }
 
   // Called when another command which requires one or more of the same
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.motor.ArmStop();
+    Robot.rotate.ArmStop();
     
   
   }

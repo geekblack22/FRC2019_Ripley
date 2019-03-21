@@ -37,7 +37,7 @@ public class ArmRetract extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.motor.ArmStop();
+    //Robot.motor.ArmStop();
 
   }
 
