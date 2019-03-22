@@ -25,7 +25,7 @@ public class ArmRetract extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.motor.ArmRetract();
+    Robot.rotate.ArmRetract();
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -45,7 +45,7 @@ public class ArmRetract extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    Robot.motor.ArmStop();
+    //Robot.motor.ArmStop();
    
   }
 }
